@@ -1,0 +1,251 @@
+*,
+*::before,
+*::after {
+	box-sizing: border-box; 
+}
+
+body {
+	font-family: 'Roboto', sans-serif;
+	font-size: 20px; /* Our base font-size */
+	line-height: 1.75; /* Line height assumes an almost rem value but is dynamic to the font-size */
+	font-weight: 300; /* Use the included weight */
+	color: #078581; /* Don't use black it's too harsh */
+
+	display: flex; /* Set body to be a flex container */
+	align-items: center; /* Vertically centre content in the viewport */
+	justify-content: center; /* Horizontally centre content in the viewport */
+
+	min-height: 100vh; /* Force vertical centering since the content won't always be taller than the viewport */
+	padding: 2rem; /* Using rem values as they don't cascade like em units and are not fixed units like pixels */
+
+	background-image: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.6)), url('../img/codifundo.png'); /* Multiple Background images, semi-transparent gradient used as a fallback for Edge */
+	background-position: center center;
+	background-size: cover;
+}
+
+@supports(background-blend-mode: multiply) { /* Use a blend mode on the background in browser that support it */
+
+	body {
+		background-image: linear-gradient(#4A4A4A, #212121), url('../img/codifundo.png'); /* Multiple background images, Gradient overlay and the Image */
+		background-blend-mode: multiply; /* Blending the Gradient with the Background Image (can't use black to blend) */
+       }
+
+}
+
+h1 {
+	font-family: 'Roboto Slab', serif; /* Use google font included as headline font */
+	font-weight: 700; /* We've only included 700 */
+	font-size: 2.25rem; /* 36px based on 16px base font size */
+	line-height: 1.3333; /* Based on 36px font size and a 48px line-height */
+	color:#cd3d58;
+	text-align: center;
+}
+
+.card {
+	display: flex; /* Sets entrire card element to be a flex container */
+	flex-direction: column; /* Forces elements to align along the vertical axis */
+
+	max-width: 62rem; /* Base-spacing-unit multiplied 35 */
+	min-height: 75vh; /* Always at least 75% of the viewport */
+
+	background-color: white; /* Set background colour of our content card */
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* Add a subtle drop shadow */
+}
+
+	
+
+@media only screen and (min-width: 53rem) { /* Base-spacing-unit * 30 */
+
+	.card {
+		flex-direction: row; /* Align items along the horizontal axis */
+		min-height: 60vh;
+	}
+
+	
+
+}
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box; }
+  
+  body {
+    font-family: 'Roboto Slab', serif;
+    color: #fff;
+    font-size: 15px;
+    margin: 0; }
+  
+  input, textarea, select, button {
+    font-family: 'Roboto Slab', serif;
+    color: #fff;
+    font-size: 15px; }
+  
+  p, h1, h2, h3, h4, h5, h6, ul {
+    margin: 0; }
+  
+  img {
+    max-width: 100%; }
+  
+  ul {
+    padding-left: 0;
+    margin-bottom: 0; }
+  
+  a:hover {
+    text-decoration: none; }
+  
+  :focus {
+    outline: none; }
+  
+  
+  .inner {
+    max-width: 758px;
+    margin: auto;
+    background: #cd3d58;
+    border-radius: 15px;
+    padding: 77px 99px 87px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+    -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+    -ms-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+    -o-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2); }
+  
+  textarea {
+    resize: none; }
+  
+  h3 {
+    text-transform: uppercase;
+    font-size: 45px;
+    font-family: 'Roboto Slab', serif;
+    text-align: center;
+    margin-bottom: 12px; }
+  
+  p {
+    text-align: center;
+    padding: 0 10px;
+    margin-bottom: 55px;
+    line-height: 1.8; }
+  
+  .form-group {
+    position: relative;
+    display: block;
+    margin-bottom: 48px; }
+    .form-group span {
+      font-size: 15px;
+      color: #00ade6;
+      position: absolute;
+      top: 11px;
+      transition: all .2s ease;
+      transform-origin: 0 0;
+      cursor: text; }
+    .form-group span.border {
+      height: 2px;
+      display: block;
+      position: absolute;
+      width: 100%;
+      left: 0;
+      top: 41px;
+      transform: scaleX(0);
+      transition: all .15s ease;
+      background: #fff; }
+  
+  .form-control {
+    border: none;
+    border-bottom: 2px solid #00ade6;
+    display: block;
+    width: 100%;
+    height: 43px;
+    font-size: 15px;
+    background: none;
+    font-family: 'Roboto Slab', bold; }
+    .form-control:focus, .form-control:valid {
+      border-bottom: 2px solid #fff; }
+      .form-control:focus + span, .form-control:valid + span {
+        transform: translateY(-22px) scale(0.8); }
+        .form-control:focus + span + .border, .form-control:valid + span + .border {
+          transform: scaleX(1); }
+  
+  textarea.form-control {
+    padding-top: 10px;
+    padding-bottom: 10px; }
+  
+  button {
+    border: none;
+    width: 162px;
+    height: 51px;
+    border: 2px solid #fff;
+    margin: auto;
+    margin-top: 60px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    background: none;
+    color: #fff;
+    text-transform: uppercase;
+    font-family: 'Roboto Slab', serif;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    position: relative;
+    -webkit-transition-property: color;
+    transition-property: color;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s; }
+    button i {
+      margin-left: 10px;
+      -webkit-transform: translateZ(0);
+      transform: translateZ(0);
+      -webkit-transition-duration: 0.1s;
+      transition-duration: 0.1s;
+      -webkit-transition-property: transform;
+      transition-property: transform;
+      -webkit-transition-timing-function: ease-out;
+      transition-timing-function: ease-out; }
+    button:before {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: #2098D1;
+      -webkit-transform: scaleX(0);
+      transform: scaleX(0);
+      -webkit-transform-origin: 0 50%;
+      transform-origin: 0 50%;
+      -webkit-transition-property: transform;
+      transition-property: transform;
+      -webkit-transition-duration: 0.3s;
+      transition-duration: 0.3s;
+      -webkit-transition-timing-function: ease-out;
+      transition-timing-function: ease-out; }
+    button:hover {
+      border-color: transparent; }
+      button:hover:before {
+        -webkit-transform: scaleX(1);
+        transform: scaleX(1); }
+      button:hover i {
+        -webkit-transform: translateX(4px);
+        transform: translateX(4px); }
+  
+  @media (max-width: 767px) {
+    h3 {
+      font-size: 38px; }
+  
+    p {
+      font-size: 14px;
+      padding: 0; }
+  
+    .inner {
+      padding: 27px 20px 37px;
+      border: none;
+      box-shadow: none;
+      -webkit-box-shadow: none;
+      -moz-box-shadow: none;
+      -ms-box-shadow: none;
+      -o-box-shadow: none; }
+  
+     }
+  
