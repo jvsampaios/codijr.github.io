@@ -6,158 +6,153 @@
 
 body {
 	font-family: 'Roboto', sans-serif;
-	font-size: 20px; /* Our base font-size */
-	line-height: 1.75; /* Line height assumes an almost rem value but is dynamic to the font-size */
-	font-weight: 300; /* Use the included weight */
-	color: #078581; /* Don't use black it's too harsh */
+	font-size: 20px; 
+	line-height: 1.75; 
+	font-weight: 300; 
+	color: #078581; 
 
-	display: flex; /* Set body to be a flex container */
-	align-items: center; /* Vertically centre content in the viewport */
-	justify-content: center; /* Horizontally centre content in the viewport */
+	display: flex; 
+	align-items: center; 
+	justify-content: center; 
 
-	min-height: 100vh; /* Force vertical centering since the content won't always be taller than the viewport */
-	padding: 2rem; /* Using rem values as they don't cascade like em units and are not fixed units like pixels */
+	min-height: 100vh; 
+	padding: 2rem; 
 
-	background-image: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.6)), url('../img/codifundo.png'); /* Multiple Background images, semi-transparent gradient used as a fallback for Edge */
+	background-image: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.6)), url('../img/codifundo.png'); 
 	background-position: center center;
 	background-size: cover;
 }
 
-@supports(background-blend-mode: multiply) { /* Use a blend mode on the background in browser that support it */
+@supports(background-blend-mode: multiply) { 
 
 	body {
-		background-image: linear-gradient(#4A4A4A, #212121), url('../img/codifundo.png'); /* Multiple background images, Gradient overlay and the Image */
-		background-blend-mode: multiply; /* Blending the Gradient with the Background Image (can't use black to blend) */
+		background-image: linear-gradient(#4A4A4A, #212121), url('../img/codifundo.png'); 
+		background-blend-mode: multiply; 
        }
 
 }
 
 h1 {
-	font-family: 'Roboto Slab', serif; /* Use google font included as headline font */
-	font-weight: 700; /* We've only included 700 */
-	font-size: 2.25rem; /* 36px based on 16px base font size */
-	line-height: 1.3333; /* Based on 36px font size and a 48px line-height */
+	font-family: 'Roboto Slab', serif; 
+	font-weight: 700; 
+	font-size: 2.25rem; 
+	line-height: 1.3333; 
     color:#cd3d58;
 }
 
 .card {
-	display: flex; /* Sets entrire card element to be a flex container */
-	flex-direction: column; /* Forces elements to align along the vertical axis */
+	display: flex; 
+	flex-direction: column; 
 
-	max-width: 62rem; /* Base-spacing-unit multiplied 35 */
-	min-height: 75vh; /* Always at least 75% of the viewport */
+	max-width: 62rem; 
+	min-height: 75vh; 
 
-	background-color: white; /* Set background colour of our content card */
-	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* Add a subtle drop shadow */
+	background-color: white; 
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); 
 }
 
 	.card__image-container {
-		max-height: 15rem; /* Stop the image getting too big */
-
+		max-height: 15rem; 
 		background-image: url('../img/codinome.jpg');
-		background-size: cover; /* Force the background image to cover the container */
-		background-position: center center; /* Position the image in the middle */
+		background-size: cover; 
+		background-position: center center; 
 	}
 
 	.card__image {
-		opacity: 0; /* Hide the image in the page, we need the DOM to render it so we have two elements with content in the card */
-		pointer-events: none; /* Allows for the image to be clicked through */
+		opacity: 0; 
+		pointer-events: none; 
 	}
 
 	.card__contents {
-		display: flex; /* Make element a flex container */
-		flex-direction: column; /* Align elements along the vertical axis */
+		display: flex; 
+		flex-direction: column;
 
 		padding: 2rem;
 	}
 
 	.card__header,
 	.card__footer {
-		flex: 0 0 auto; /* Don't grow, don't shrink, automatic size (basis) */
+		flex: 0 0 auto; 
 	}
 
 	.card__footer {
-		margin-top: 2rem; /* Create a bit of space between the content and the footer */
-		text-align: right; /* Align the contents of the footer to the right */
+		margin-top: 2rem; 
+		text-align: right;
 	}
 
 	.card__body {
-		flex: 1 1 auto; /* Same as flex:1; */
+		flex: 1 1 auto; 
 	}
 
-	/* The flex properties of the card header, footer and body allows the footer to always be at the bottom of the container */
 
 	.card__title {
-		margin-top: 0; /* Remove margin as there are no elements above it */
+		margin-top: 0; 
 	}
 
-@media only screen and (min-width: 53rem) { /* Base-spacing-unit * 30 */
+@media only screen and (min-width: 53rem) { 
 
 	.card {
-		flex-direction: row; /* Align items along the horizontal axis */
+		flex-direction: row; 
 		min-height: 60vh;
 	}
 
 		.card__image-container {
-			flex: 0 1 45%; /* Don't grow, do shrink, 45% width (basis) */
-			max-height: inherit; /* Reset the max-height set for mobile */
+			flex: 0 0 45%; 
+			max-height: inherit; 
+
 		}
 
 		.card__contents {
-			flex: 1 1 55%; /* Grow, Shrink, 55% width */
-			padding: 3rem; /* Increase padding now we have more space to play with */
+			flex: 1 1 55%;
+			padding: 3rem; 
 		}
 
 }
 
-
-
-/* Social icons based on: codepen.io/matchboxhero/pen/onzkC */
-
 [class^="icon--"] {
-    font-family: 'FontAwesome'; /* Apply icon font */
-    font-style: normal; /* Removes the default italics */
+    font-family: 'FontAwesome';
+    font-style: normal; 
 }
 
 [class^="social-button"] {
-   	display: inline-flex; /* Display elements inline but turn them into a flex-container */
-	align-items: center; /* Centrally align the children vertically */
-	justify-content: center; /* Centrally align the children horizontally */
+   	display: inline-flex; 
+	align-items: center;
+	justify-content: center; 
 
-   	height: 3rem; /* Create square */
-    width: 3rem; /* Create square */
+   	height: 3rem; 
+    width: 3rem;
 
-   	font-size: 1.4rem; /* Increase the default font size */
-    color: white; /* Make icon white */
-    border-radius: 50%; /* Create circle */
+   	font-size: 1.4rem; 
+    color: white;
+    border-radius: 50%; 
 
-    text-decoration: none; /* Remove default underline */
+    text-decoration: none; 
 
-    transition: background-color 150ms ease-in-out; /* Transition background colour on hover */
+    transition: background-color 150ms ease-in-out;
 
     margin-right: 0.1rem;
 }
 
 
 .icon--facebook::before {
-    content: '\f09a'; /* Unicode value for the facebook icon in our chosen icon font */
+    content: '\f09a';
 }
 
 .icon--instagram::before {
-    content: '\f16d'; /* Unicode value for the pintrest icon in our chosen icon font */
+    content: '\f16d';
 }
 
 
 .social-button--facebook {
-    background-color: #4b70ab; /* Facebook colour */
+    background-color: #4b70ab; 
 }
 
 .social-button--facebook:hover {
-    background-color: #3f5f91; /* Facebook hover colour */
+    background-color: #3f5f91;
 }
 
 .social-button--instagram {
-    background-color: #f09433; /* Pintrest colour */
+    background-color: #f09433;
     background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); 
     background: -webkit-linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
     background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 

@@ -6,64 +6,64 @@
 
 body {
 	font-family: 'Roboto', sans-serif;
-	font-size: 20px; /* Our base font-size */
-	line-height: 1.75; /* Line height assumes an almost rem value but is dynamic to the font-size */
-	font-weight: 300; /* Use the included weight */
-	color: #078581; /* Don't use black it's too harsh */
+	font-size: 20px;
+	line-height: 1.75; 
+	font-weight: 300; 
+	color: #078581; 
+	display: flex; 
+	align-items: center; 
+	justify-content: center; 
+	min-height: 100vh; 
+	padding: 2rem; 
 
-	display: flex; /* Set body to be a flex container */
-	align-items: center; /* Vertically centre content in the viewport */
-	justify-content: center; /* Horizontally centre content in the viewport */
-
-	min-height: 100vh; /* Force vertical centering since the content won't always be taller than the viewport */
-	padding: 2rem; /* Using rem values as they don't cascade like em units and are not fixed units like pixels */
-
-	background-image: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.6)), url('../img/codifundo.png'); /* Multiple Background images, semi-transparent gradient used as a fallback for Edge */
+	background-image: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.6)), url('../img/codifundo.png'); 
 	background-position: center center;
 	background-size: cover;
 }
 
-@supports(background-blend-mode: multiply) { /* Use a blend mode on the background in browser that support it */
-
+@supports(background-blend-mode: multiply) { 
 	body {
-		background-image: linear-gradient(#4A4A4A, #212121), url('../img/codifundo.png'); /* Multiple background images, Gradient overlay and the Image */
-		background-blend-mode: multiply; /* Blending the Gradient with the Background Image (can't use black to blend) */
+		background-image: linear-gradient(#4A4A4A, #212121), url('../img/codifundo.png'); 
+		background-blend-mode: multiply; 
        }
 
 }
 
 h1 {
-	font-family: 'Roboto Slab', serif; /* Use google font included as headline font */
-	font-weight: 700; /* We've only included 700 */
-	font-size: 2.25rem; /* 36px based on 16px base font size */
-	line-height: 1.3333; /* Based on 36px font size and a 48px line-height */
+	font-family: 'Roboto Slab', serif; 
+	font-weight: 700; 
+	font-size: 2.25rem; 
+	line-height: 1.3333; 
 	color:#cd3d58;
 	text-align: center;
 }
 
 .card {
-	display: flex; /* Sets entrire card element to be a flex container */
-	flex-direction: column; /* Forces elements to align along the vertical axis */
+	display: flex; 
+	flex-direction: column; 
+	max-width: 62rem;
+	min-height: 75vh; 
 
-	max-width: 62rem; /* Base-spacing-unit multiplied 35 */
-	min-height: 75vh; /* Always at least 75% of the viewport */
+	
 
-	background-color: white; /* Set background colour of our content card */
-	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* Add a subtle drop shadow */
 }
 
 	
 
-@media only screen and (min-width: 53rem) { /* Base-spacing-unit * 30 */
+@media only screen and (min-width: 53rem) { 
 
 	.card {
-		flex-direction: row; /* Align items along the horizontal axis */
+		flex-direction: row; 
 		min-height: 60vh;
 	}
 
 	
 
 }
+.container {
+    position: relative;
+    width: 50%;
+  }
 
 * {
     -webkit-box-sizing: border-box;
@@ -210,7 +210,7 @@ h1 {
       left: 0;
       right: 0;
       bottom: 0;
-      background: #2098D1;
+      background: #078581;
       -webkit-transform: scaleX(0);
       transform: scaleX(0);
       -webkit-transform-origin: 0 50%;
